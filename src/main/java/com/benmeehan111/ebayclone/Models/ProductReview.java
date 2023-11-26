@@ -4,8 +4,7 @@ import lombok.*;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
-
-import org.hibernate.annotations.GenericGenerator;
+import java.util.UUID;
 
 @Entity
 @Table(name = "ProductReview")
@@ -15,10 +14,9 @@ import org.hibernate.annotations.GenericGenerator;
 public class ProductReview {
 
     @Id
-    @GeneratedValue(generator = "uuid4")
-    @GenericGenerator(name = "uuid4", strategy = "org.hibernate.id.UUIDGenerator")
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "ReviewId", columnDefinition = "BINARY(16)")
-    private Long reviewId;
+    private UUID reviewId;
 
     @ManyToOne
     @JoinColumn(name = "ProductId", nullable = false)

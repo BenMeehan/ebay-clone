@@ -3,7 +3,6 @@ package com.benmeehan111.ebayclone.Models;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GenericGenerator;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;
@@ -12,15 +11,14 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(name = "Order")
+@Table(name = "User_Order")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Order {
 
     @Id
-    @GeneratedValue(generator = "uuid4")
-    @GenericGenerator(name = "uuid4", strategy = "org.hibernate.id.UUIDGenerator")
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "OrderId", columnDefinition = "BINARY(16)")
     private UUID orderId;
 

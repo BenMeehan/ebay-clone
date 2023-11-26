@@ -3,7 +3,6 @@ package com.benmeehan111.ebayclone.Models;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GenericGenerator;
 
 import jakarta.persistence.*;
 import java.util.UUID;
@@ -16,8 +15,7 @@ import java.util.UUID;
 public class User {
 
     @Id
-    @GeneratedValue(generator = "uuid4")
-    @GenericGenerator(name = "uuid4", strategy = "org.hibernate.id.UUIDGenerator")
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "UserId", columnDefinition = "BINARY(16)")
     private UUID userId;
 

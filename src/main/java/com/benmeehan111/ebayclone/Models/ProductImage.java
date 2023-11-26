@@ -1,10 +1,11 @@
 package com.benmeehan111.ebayclone.Models;
 
-import org.hibernate.annotations.GenericGenerator;
+import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -19,11 +20,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProductImage {
+
     @Id
-    @GeneratedValue(generator = "uuid4")
-    @GenericGenerator(name = "uuid4", strategy = "org.hibernate.id.UUIDGenerator")
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "ImageId", columnDefinition = "BINARY(16)")
-    private Long imageId;
+    private UUID imageId;
 
     @Column(name = "ImageUrl")
     private String imageUrl;
