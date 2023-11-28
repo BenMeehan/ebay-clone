@@ -28,4 +28,11 @@ public class User {
     @Column(name = "Email", unique = true, nullable = false)
     private String email;
 
+    @Column(name = "Address")
+    private String address;
+
+    @Column(name = "Phone")
+    private String phone;
+
+    // Other user-related attributes, getters, and setters
 }
