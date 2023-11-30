@@ -2,6 +2,7 @@ package com.benmeehan111.ebayclone.Models;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 import jakarta.persistence.Column;
@@ -64,4 +65,7 @@ public class Product {
     @Enumerated(EnumType.STRING)
     @Column(name = "ProductType", nullable = false)
     private ProductType productType;
+
+    @Column(name = "ProductImages")
+    private List<String> productImages;
 }
