@@ -34,5 +34,4 @@ public class User {
     @Column(name = "Phone")
     private String phone;
 
-    // Other user-related attributes, getters, and setters
 }

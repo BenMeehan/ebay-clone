@@ -1,6 +1,7 @@
 package com.benmeehan111.ebayclone.Models;
 
 import java.util.List;
+import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,9 +21,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ProductCategory {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CategoryId")
-    private Long categoryId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "CategoryId", columnDefinition = "BINARY(16)")
+    private UUID categoryId;
 
     @Column(name = "CategoryName", nullable = false)
     private String categoryName;
