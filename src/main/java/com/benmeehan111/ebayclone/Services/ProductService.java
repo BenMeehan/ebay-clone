@@ -38,14 +38,14 @@ public class ProductService {
             UUID productId = (UUID) productInfo[0];
             String productName = (String) productInfo[1];
             BigDecimal price = (BigDecimal) productInfo[2];
-            Long categoryId = (Long) productInfo[3];
+            UUID categoryId = (UUID) productInfo[3];
             String categoryName = (String) productInfo[4];
 
             Product product = new Product();
             product.setProductId(productId);
             product.setProductName(productName);
             product.setPrice(price);
-            
+
             ProductCategory category = new ProductCategory();
             category.setCategoryId(categoryId);
             category.setCategoryName(categoryName);
