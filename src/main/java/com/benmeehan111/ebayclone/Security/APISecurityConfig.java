@@ -27,9 +27,15 @@ public class APISecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(
-                configurer -> configurer.requestMatchers(HttpMethod.GET, "/products/info/**")
-                        .hasRole("ADMIN"));
+        // http.authorizeHttpRequests(
+        // configurer -> configurer.requestMatchers(HttpMethod.GET,
+        // "/products/info/BID")
+        // .hasRole("ADMIN"));
+
+        // Allow all for testing/dev
+
+        // http.authorizeHttpRequests(configurer ->
+        // configurer.anyRequest().permitAll());
 
         http.httpBasic(Customizer.withDefaults());
 
